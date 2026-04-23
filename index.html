@@ -10,101 +10,134 @@
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .accent-gradient { background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .accent-blue { color: #3b82f6; }
+        .accent-violet { color: #8b5cf6; }
+        .btn-gradient { background: linear-gradient(135deg, #3b82f6, #8b5cf6); }
+        .hidden-section { display: none; }
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body class="selection:bg-violet-500/30">
+<body class="selection:bg-blue-500/30">
 
     <nav class="fixed top-0 w-full z-50 px-6 py-4">
-        <div class="max-w-5xl mx-auto glass rounded-2xl px-6 py-3 flex justify-between items-center">
-            <span class="font-bold tracking-tighter text-xl">HQ.</span>
-            <div class="space-x-8 text-sm font-medium">
-                <a href="#home" class="hover:text-blue-400 transition">Home</a>
-                <a href="#resume" class="hover:text-blue-400 transition">Resume</a>
-                <a href="#blog" class="hover:text-blue-400 transition">Blog</a>
+        <div class="max-w-6xl mx-auto glass rounded-2xl px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 btn-gradient rounded-lg flex items-center justify-center font-bold">H</div>
+                <span class="font-bold tracking-tight text-xl hidden md:block">Hongyi Qi</span>
+            </div>
+            <div class="flex gap-6 md:gap-10 text-sm font-medium">
+                <button onclick="showSection('resume')" class="hover:text-blue-400 transition uppercase tracking-widest">Resume</button>
+                <button onclick="showSection('blog')" class="hover:text-blue-400 transition uppercase tracking-widest">Blog</button>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="min-h-screen flex flex-col justify-center items-center px-6 pt-20">
-        <div class="max-w-3xl text-center fade-in">
-            <h1 class="text-6xl md:text-8xl font-bold mb-6">Hongyi <span class="accent-gradient">Qi</span></h1>
-            <p class="text-xl text-slate-400 mb-8 leading-relaxed">
-                Computer Science at Carnegie Mellon • Researcher in Computer Vision & Robotics • USACO Platinum
-            </p>
-            <div class="flex justify-center gap-4">
-                <a href="mailto:eqi@andrew.cmu.edu" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-full transition font-semibold">Contact Me</a>
-                <a href="#" class="px-6 py-3 glass hover:bg-white/10 rounded-full transition font-semibold">GitHub</a>
+    <main id="resume-page" class="pt-32 pb-20 px-6 max-w-6xl mx-auto fade-in">
+        <header class="mb-16 text-center md:text-left">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Hongyi <span class="text-blue-500">Qi</span></h1>
+            <p class="text-slate-400 text-lg mb-6">Computer Science @ Carnegie Mellon • USACO Platinum • AI Researcher</p>
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm font-mono text-slate-300">
+                <a href="mailto:eqi@andrew.cmu.edu" class="hover:text-blue-400">eqi@andrew.cmu.edu</a>
+                <span>•</span>
+                <span>(412) 618-0842</span>
+                <span>•</span>
+                <span class="text-violet-400">Pittsburgh, PA</span>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <section id="resume" class="py-24 px-6 max-w-5xl mx-auto">
-        <div class="grid md:grid-cols-3 gap-12">
-            <div class="fade-in">
-                <h2 class="text-2xl font-bold mb-8 flex items-center gap-2">
-                    <span class="w-8 h-[2px] bg-blue-500"></span> Education
-                </h2>
-                <div class="mb-8">
-                    <h3 class="font-bold text-lg">Carnegie Mellon University</h3>
-                    <p class="text-blue-400 text-sm">B.S. Computer Science | 2029</p>
-                    <p class="text-slate-400 text-sm mt-2">GPA: 4.0 (Dean's List)</p>
-                </div>
-                
-                <h2 class="text-2xl font-bold mb-8 mt-12 flex items-center gap-2">
-                    <span class="w-8 h-[2px] bg-violet-500"></span> Technical Skills
-                </h2>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 glass rounded-md text-xs">C / C++</span>
-                    <span class="px-3 py-1 glass rounded-md text-xs">Python</span>
-                    <span class="px-3 py-1 glass rounded-md text-xs">Java</span>
-                    <span class="px-3 py-1 glass rounded-md text-xs">Computer Vision</span>
-                    <span class="px-3 py-1 glass rounded-md text-xs">RISC-V</span>
-                    <span class="px-3 py-1 glass rounded-md text-xs">Embedded Systems</span>
-                </div>
-            </div>
-
-            <div class="md:col-span-2 space-y-12">
-                <div class="fade-in">
-                    <h2 class="text-2xl font-bold mb-8 flex items-center gap-2">
-                        <span class="w-8 h-[2px] bg-blue-500"></span> Experience
-                    </h2>
-                    <div class="glass p-6 rounded-2xl mb-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-bold text-xl">UltraRISC Technology</h3>
-                            <span class="text-xs text-slate-500">Summer 2024</span>
+        <div class="grid lg:grid-cols-3 gap-12">
+            <div class="space-y-12">
+                <section>
+                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-blue-500 mb-6">Education</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-bold text-lg">Carnegie Mellon University</h3>
+                            <p class="text-sm text-slate-400">B.S. in Computer Science [cite: 5]</p>
+                            <p class="text-sm text-blue-400">May 2029 (Expected) [cite: 8]</p>
+                            <p class="text-xs mt-2 text-slate-500">GPA: 4.0 | Fall 2025 Dean's List [cite: 6, 7]</p>
                         </div>
-                        <p class="text-sm text-slate-400">Optimized and deployed LLMs on RISC-V architecture using llama.cpp. Managed memory constraints for resource-limited systems.</p>
+                        <div>
+                            <h3 class="font-bold text-lg">Shanghai Star River Bilingual</h3>
+                            <p class="text-sm text-slate-400">High School Diploma | GPA 4.7 [cite: 10, 11]</p>
+                            <p class="text-xs mt-1 text-slate-500">AP CS A ($1/91$ globally) [cite: 13]</p>
+                        </div>
                     </div>
+                </section>
 
-                    <h2 class="text-2xl font-bold mb-8 mt-12 flex items-center gap-2">
-                        <span class="w-8 h-[2px] bg-violet-500"></span> Key Projects
-                    </h2>
-                    <div class="glass p-6 rounded-2xl">
-                        <h3 class="font-bold text-lg">Autonomous Swimmer-following Vehicle</h3>
-                        <p class="text-blue-400 text-sm mb-4">Fudan University Researcher</p>
-                        <ul class="text-sm text-slate-400 list-disc list-inside space-y-2">
-                            <li>Improved detection accuracy via Vanishing point-based optimization.</li>
-                            <li>S.-T. Yau Science Award & ISEF National Team representative.</li>
+                <section>
+                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-violet-500 mb-6">Skills</h2>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 glass rounded-full text-xs">C / C++</span>
+                        <span class="px-3 py-1 glass rounded-full text-xs">Python</span>
+                        <span class="px-3 py-1 glass rounded-full text-xs">Java</span>
+                        <span class="px-3 py-1 glass rounded-full text-xs">LaTeX</span>
+                        <span class="px-3 py-1 glass rounded-full text-xs">Computer Vision</span>
+                        <span class="px-3 py-1 glass rounded-full text-xs">Embedded Systems</span>
+                        <span class="px-3 py-1 glass rounded-full text-xs">RISC-V</span>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-blue-500 mb-6">Selected Awards</h2>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><strong class="text-white block">USACO Platinum Division</strong> Top-tier competitive programming [cite: 39]</li>
+                        <li><strong class="text-white block">S.-T. Yau Science Award</strong> Excellent Award (Top 1% globally) [cite: 38]</li>
+                        <li><strong class="text-white block">National Talents Plan</strong> Top 2 in Computer Science [cite: 40]</li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="lg:col-span-2 space-y-12">
+                <section>
+                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-blue-500 mb-6">Work Experience</h2>
+                    <div class="glass p-8 rounded-3xl relative overflow-hidden group">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-xl group-hover:text-blue-400 transition">UltraRISC Technology</h3>
+                                <p class="text-slate-400">Summer Internship [cite: 31, 32]</p>
+                            </div>
+                            <span class="text-xs font-mono text-slate-500">July 2024 — Aug 2024 [cite: 33]</span>
+                        </div>
+                        <ul class="text-sm text-slate-400 space-y-2 list-disc list-inside">
+                            <li>Optimized and deployed LLMs on RISC-V architecture via llama.cpp cross-compilation[cite: 34].</li>
+                            <li>Benchmarked inference performance and managed memory for resource-limited systems[cite: 35].</li>
                         </ul>
                     </div>
-                </div>
+                </section>
+
+                <section>
+                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-violet-500 mb-6">Research Projects</h2>
+                    <div class="space-y-6">
+                        <div class="glass p-8 rounded-3xl">
+                            <h3 class="font-bold text-xl">Autonomous Swimmer-following Vehicle</h3>
+                            <p class="text-sm text-violet-400 mb-4">Fudan University | Advisor: Prof. Tun Lu [cite: 18, 19]</p>
+                            <p class="text-sm text-slate-400 mb-4">Developed AI-assisted vehicles for swimmer detection. Implemented vanishing point-based optimization to improve long-range NMS accuracy[cite: 21, 22].</p>
+                            <span class="text-xs px-3 py-1 bg-violet-500/20 text-violet-300 rounded-lg">ISEF Chinese National Team [cite: 23]</span>
+                        </div>
+
+                        <div class="glass p-8 rounded-3xl">
+                            <h3 class="font-bold text-xl">Live Chat Emotionizer</h3>
+                            <p class="text-sm text-slate-400 mb-4">Individual Research [cite: 25, 26]</p>
+                            <p class="text-sm text-slate-400">A real-time chatbot framework utilizing OpenCV, FER, MTCNN, and Ollama to add emotional context awareness to messaging[cite: 28, 29].</p>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-    </section>
+    </main>
 
-    <section id="blog" class="py-24 px-6 bg-slate-900/50">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center">Technical <span class="accent-gradient">Notes</span></h2>
-            <div id="blog-container" class="grid md:grid-cols-2 gap-8">
-                </div>
-        </div>
-    </section>
+    <main id="blog-page" class="pt-32 pb-20 px-6 max-w-4xl mx-auto hidden-section">
+        <header class="mb-16">
+            <h2 class="text-4xl font-bold mb-4">Technical <span class="text-violet-500">Blog</span></h2>
+            <p class="text-slate-400">Thoughts on Computer Vision, RISC-V, and Robotics.</p>
+        </header>
+        <div id="blog-container" class="space-y-12">
+            </div>
+    </main>
 
-    <footer class="py-12 text-center text-slate-500 text-sm">
-        &copy; 2024 Hongyi Qi • Built with Tailwind & Vanilla JS
+    <footer class="py-12 text-center text-slate-600 text-xs border-t border-white/5">
+        &copy; 2026 Hongyi Qi • Carnegie Mellon University [cite: 5]
     </footer>
 
     <script src="posts.js"></script>

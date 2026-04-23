@@ -1,37 +1,49 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Render Blog Posts
-    const blogContainer = document.getElementById('blog-container');
+// SPA Section Switching
+function showSection(sectionId) {
+    const resume = document.getElementById('resume-page');
+    const blog = document.getElementById('blog-page');
     
-    blogPosts.forEach((post, index) => {
-        const postElement = document.createElement('div');
-        postElement.className = 'glass p-8 rounded-3xl hover:border-blue-500/50 transition cursor-pointer group';
-        postElement.innerHTML = `
-            <p class="text-blue-400 text-xs font-mono mb-2">${post.date}</p>
-            <h3 class="text-2xl font-bold mb-4 group-hover:text-blue-400 transition">${post.title}</h3>
-            <p class="text-slate-400 text-sm mb-6">${post.excerpt}</p>
-            <div class="prose prose-invert hidden" id="post-${index}">
+    if (sectionId === 'blog') {
+        resume.classList.add('hidden-section');
+        blog.classList.remove('hidden-section');
+        blog.classList.add('fade-in');
+        window.scrollTo(0, 0);
+    } else {
+        blog.classList.add('hidden-section');
+        resume.classList.remove('hidden-section');
+        resume.classList.add('fade-in');
+        window.scrollTo(0, 0);
+    }
+}
+
+// Blog Rendering
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('blog-container');
+    
+    blogPosts.forEach(post => {
+        const article = document.createElement('article');
+        article.className = 'glass p-8 rounded-3xl hover:border-violet-500/40 transition duration-500';
+        article.innerHTML = `
+            <div class="flex gap-2 mb-4">
+                ${post.tags.map(tag => `<span class="text-[10px] uppercase tracking-widest text-violet-400 bg-violet-400/10 px-2 py-1 rounded">${tag}</span>`).join('')}
+            </div>
+            <h3 class="text-2xl font-bold mb-2">${post.title}</h3>
+            <p class="text-xs text-slate-500 font-mono mb-6">${post.date}</p>
+            <p class="text-slate-400 leading-relaxed mb-6">${post.excerpt}</p>
+            <div class="prose prose-invert max-w-none text-slate-300 hidden" id="content-${post.id}">
                 ${marked.parse(post.content)}
             </div>
-            <button onclick="togglePost(${index})" class="text-sm font-bold text-violet-400 uppercase tracking-widest">Read More +</button>
+            <button onclick="toggleContent('${post.id}')" id="btn-${post.id}" class="text-sm font-bold text-blue-400 hover:text-white transition">READ FULL POST →</button>
         `;
-        blogContainer.appendChild(postElement);
+        container.appendChild(article);
     });
-
-    // 2. Intersection Observer for Fade-in
-    const observerOptions = { threshold: 0.1 };
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 });
 
-// Toggle post visibility (Simple SPA logic)
-function togglePost(index) {
-    const content = document.getElementById(`post-${index}`);
+function toggleContent(id) {
+    const content = document.getElementById(`content-${id}`);
+    const btn = document.getElementById(`btn-${id}`);
+    const isHidden = content.classList.contains('hidden');
+    
     content.classList.toggle('hidden');
+    btn.innerText = isHidden ? "CLOSE POST ←" : "READ FULL POST →";
 }
