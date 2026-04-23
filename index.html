@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hongyi Qi | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .accent-gradient { background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="selection:bg-violet-500/30">
+
+    <nav class="fixed top-0 w-full z-50 px-6 py-4">
+        <div class="max-w-5xl mx-auto glass rounded-2xl px-6 py-3 flex justify-between items-center">
+            <span class="font-bold tracking-tighter text-xl">HQ.</span>
+            <div class="space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-blue-400 transition">Home</a>
+                <a href="#resume" class="hover:text-blue-400 transition">Resume</a>
+                <a href="#blog" class="hover:text-blue-400 transition">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center px-6 pt-20">
+        <div class="max-w-3xl text-center fade-in">
+            <h1 class="text-6xl md:text-8xl font-bold mb-6">Hongyi <span class="accent-gradient">Qi</span></h1>
+            <p class="text-xl text-slate-400 mb-8 leading-relaxed">
+                Computer Science at Carnegie Mellon • Researcher in Computer Vision & Robotics • USACO Platinum
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="mailto:eqi@andrew.cmu.edu" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-full transition font-semibold">Contact Me</a>
+                <a href="#" class="px-6 py-3 glass hover:bg-white/10 rounded-full transition font-semibold">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="fade-in">
+                <h2 class="text-2xl font-bold mb-8 flex items-center gap-2">
+                    <span class="w-8 h-[2px] bg-blue-500"></span> Education
+                </h2>
+                <div class="mb-8">
+                    <h3 class="font-bold text-lg">Carnegie Mellon University</h3>
+                    <p class="text-blue-400 text-sm">B.S. Computer Science | 2029</p>
+                    <p class="text-slate-400 text-sm mt-2">GPA: 4.0 (Dean's List)</p>
+                </div>
+                
+                <h2 class="text-2xl font-bold mb-8 mt-12 flex items-center gap-2">
+                    <span class="w-8 h-[2px] bg-violet-500"></span> Technical Skills
+                </h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 glass rounded-md text-xs">C / C++</span>
+                    <span class="px-3 py-1 glass rounded-md text-xs">Python</span>
+                    <span class="px-3 py-1 glass rounded-md text-xs">Java</span>
+                    <span class="px-3 py-1 glass rounded-md text-xs">Computer Vision</span>
+                    <span class="px-3 py-1 glass rounded-md text-xs">RISC-V</span>
+                    <span class="px-3 py-1 glass rounded-md text-xs">Embedded Systems</span>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 space-y-12">
+                <div class="fade-in">
+                    <h2 class="text-2xl font-bold mb-8 flex items-center gap-2">
+                        <span class="w-8 h-[2px] bg-blue-500"></span> Experience
+                    </h2>
+                    <div class="glass p-6 rounded-2xl mb-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-xl">UltraRISC Technology</h3>
+                            <span class="text-xs text-slate-500">Summer 2024</span>
+                        </div>
+                        <p class="text-sm text-slate-400">Optimized and deployed LLMs on RISC-V architecture using llama.cpp. Managed memory constraints for resource-limited systems.</p>
+                    </div>
+
+                    <h2 class="text-2xl font-bold mb-8 mt-12 flex items-center gap-2">
+                        <span class="w-8 h-[2px] bg-violet-500"></span> Key Projects
+                    </h2>
+                    <div class="glass p-6 rounded-2xl">
+                        <h3 class="font-bold text-lg">Autonomous Swimmer-following Vehicle</h3>
+                        <p class="text-blue-400 text-sm mb-4">Fudan University Researcher</p>
+                        <ul class="text-sm text-slate-400 list-disc list-inside space-y-2">
+                            <li>Improved detection accuracy via Vanishing point-based optimization.</li>
+                            <li>S.-T. Yau Science Award & ISEF National Team representative.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="py-24 px-6 bg-slate-900/50">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center">Technical <span class="accent-gradient">Notes</span></h2>
+            <div id="blog-container" class="grid md:grid-cols-2 gap-8">
+                </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-slate-500 text-sm">
+        &copy; 2024 Hongyi Qi • Built with Tailwind & Vanilla JS
+    </footer>
+
+    <script src="posts.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
