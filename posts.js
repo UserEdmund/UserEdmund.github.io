@@ -3,30 +3,36 @@ const blogPosts = [
         id: "risc-v-optimization",
         title: "Large Language Models on RISC-V Architecture",
         date: "August 15, 2024",
+        isoDate: "2024-08-15",
         tags: ["LLM", "RISC-V", "C++"],
-        excerpt: "A deep dive into cross-compiling llama.cpp for specialized hardware and managing extreme memory constraints.",
+        url: "blog/risc-v-optimization.html",
+        excerpt: "A deep dive into cross-compiling llama.cpp for specialized hardware and managing tight memory constraints.",
         content: `
 ### Overview
-During my internship at **UltraRISC Technology**, I worked on the cutting edge of hardware-software co-design[cite: 31].
+During my internship at **UltraRISC Technology**, I worked on hardware-software co-design for running language models on specialized systems.
 
 ### Key Technical Hurdles
-1. **Cross-Compilation**: Porting the \`llama.cpp\` library required custom build flags for the RISC-V ISA.
-2. **Memory Constraints**: Deploying LLMs on resource-limited systems meant implementing aggressive quantization.
+1. **Cross-compilation**: Porting the \`llama.cpp\` library required custom build flags for the RISC-V ISA.
+2. **Memory constraints**: Deploying LLMs on resource-limited systems meant using careful quantization and memory management.
 
-I was able to successfully benchmark stable execution on these specialized environments[cite: 35].
+The project gave me a sharper view of how model performance depends on the entire stack, from compiler flags to hardware architecture.
         `
     },
     {
         id: "computer-vision-research",
         title: "Vanishing Point Optimization in Object Detection",
-        date: "June 01, 2024",
+        date: "June 1, 2024",
+        isoDate: "2024-06-01",
         tags: ["CV", "AI", "Research"],
-        excerpt: "How I used geometric priors to improve detection accuracy for the Autonomous Swimmer-following Vehicle.",
+        url: "blog/computer-vision-research.html",
+        excerpt: "How geometric priors can improve detection accuracy for an autonomous swimmer-following vehicle.",
         content: `
 ### Research at Fudan University
-Working under Prof. Tun Lu, I explored how to assist vehicles in tracking swimmers more accurately[cite: 19].
+Working under Prof. Tun Lu, I explored how to help vehicles track swimmers more accurately over long distances.
 
-The core innovation was using **vanishing point-based optimization** during the Non-Maximum Suppression (NMS) process[cite: 22]. This significantly improved far-distance detection where standard pixels lose definition.
+The core idea was using **vanishing point-based optimization** during the Non-Maximum Suppression process. When objects are far from the camera, standard pixel-space assumptions become brittle; geometric context can help the detector make more stable decisions.
+
+This work connected computer vision with a very physical robotics problem: keeping perception reliable when the environment is moving, reflective, and noisy.
         `
     }
 ];

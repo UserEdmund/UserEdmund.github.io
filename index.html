@@ -4,140 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hongyi Qi | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .accent-blue { color: #3b82f6; }
-        .accent-violet { color: #8b5cf6; }
-        .btn-gradient { background: linear-gradient(135deg, #3b82f6, #8b5cf6); }
-        .hidden-section { display: none; }
-        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="selection:bg-blue-500/30">
-
-    <nav class="fixed top-0 w-full z-50 px-6 py-4">
-        <div class="max-w-6xl mx-auto glass rounded-2xl px-6 py-3 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 btn-gradient rounded-lg flex items-center justify-center font-bold">H</div>
-                <span class="font-bold tracking-tight text-xl hidden md:block">Hongyi Qi</span>
-            </div>
-            <div class="flex gap-6 md:gap-10 text-sm font-medium">
-                <button onclick="showSection('resume')" class="hover:text-blue-400 transition uppercase tracking-widest">Resume</button>
-                <button onclick="showSection('blog')" class="hover:text-blue-400 transition uppercase tracking-widest">Blog</button>
-            </div>
+<body>
+    <nav class="site-nav">
+        <a href="#home" class="brand-mark" aria-label="Hongyi Qi home">
+            <span>HQ</span>
+        </a>
+        <div class="nav-links">
+            <a href="#resume">Resume</a>
+            <a href="#blog">Blog</a>
+            <a href="mailto:eqi@andrew.cmu.edu">Contact</a>
         </div>
     </nav>
 
-    <main id="resume-page" class="pt-32 pb-20 px-6 max-w-6xl mx-auto fade-in">
-        <header class="mb-16 text-center md:text-left">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4">Hongyi <span class="text-blue-500">Qi</span></h1>
-            <p class="text-slate-400 text-lg mb-6">Computer Science @ Carnegie Mellon • USACO Platinum • AI Researcher</p>
-            <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm font-mono text-slate-300">
-                <a href="mailto:eqi@andrew.cmu.edu" class="hover:text-blue-400">eqi@andrew.cmu.edu</a>
-                <span>•</span>
-                <span>(412) 618-0842</span>
-                <span>•</span>
-                <span class="text-violet-400">Pittsburgh, PA</span>
+    <main id="home" class="page-shell">
+        <section class="hero-grid">
+            <div class="hero-copy">
+                <p class="eyebrow">Computer Science @ Carnegie Mellon</p>
+                <h1>Hongyi Qi builds practical AI systems, robots, and low-level software.</h1>
+                <p class="lede">I work across computer vision, RISC-V systems, and competitive programming. I like ideas that can leave the notebook and survive in the world.</p>
+                <div class="hero-actions">
+                    <a class="button-primary" href="#resume">View resume</a>
+                    <a class="button-secondary" href="#blog">Read notes</a>
+                </div>
             </div>
-        </header>
+            <aside class="field-card" aria-label="Profile snapshot">
+                <div class="field-grid">
+                    <span>vision</span>
+                    <span>systems</span>
+                    <span>robotics</span>
+                    <span>algorithms</span>
+                </div>
+                <div class="signal-lines" aria-hidden="true">
+                    <i></i><i></i><i></i><i></i><i></i>
+                </div>
+                <div>
+                    <p class="field-label">Currently</p>
+                    <p class="field-text">B.S. in Computer Science, CMU. Based between Pittsburgh and Shanghai.</p>
+                </div>
+            </aside>
+        </section>
 
-        <div class="grid lg:grid-cols-3 gap-12">
-            <div class="space-y-12">
-                <section>
-                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-blue-500 mb-6">Education</h2>
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="font-bold text-lg">Carnegie Mellon University</h3>
-                            <p class="text-sm text-slate-400">B.S. in Computer Science [cite: 5]</p>
-                            <p class="text-sm text-blue-400">May 2029 (Expected) [cite: 8]</p>
-                            <p class="text-xs mt-2 text-slate-500">GPA: 4.0 | Fall 2025 Dean's List [cite: 6, 7]</p>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg">Shanghai Star River Bilingual</h3>
-                            <p class="text-sm text-slate-400">High School Diploma | GPA 4.7 [cite: 10, 11]</p>
-                            <p class="text-xs mt-1 text-slate-500">AP CS A ($1/91$ globally) [cite: 13]</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-violet-500 mb-6">Skills</h2>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 glass rounded-full text-xs">C / C++</span>
-                        <span class="px-3 py-1 glass rounded-full text-xs">Python</span>
-                        <span class="px-3 py-1 glass rounded-full text-xs">Java</span>
-                        <span class="px-3 py-1 glass rounded-full text-xs">LaTeX</span>
-                        <span class="px-3 py-1 glass rounded-full text-xs">Computer Vision</span>
-                        <span class="px-3 py-1 glass rounded-full text-xs">Embedded Systems</span>
-                        <span class="px-3 py-1 glass rounded-full text-xs">RISC-V</span>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-blue-500 mb-6">Selected Awards</h2>
-                    <ul class="space-y-4 text-sm text-slate-400">
-                        <li><strong class="text-white block">USACO Platinum Division</strong> Top-tier competitive programming [cite: 39]</li>
-                        <li><strong class="text-white block">S.-T. Yau Science Award</strong> Excellent Award (Top 1% globally) [cite: 38]</li>
-                        <li><strong class="text-white block">National Talents Plan</strong> Top 2 in Computer Science [cite: 40]</li>
-                    </ul>
-                </section>
+        <section id="resume" class="section-block">
+            <div class="section-heading">
+                <p class="eyebrow">Resume</p>
+                <h2>Selected background</h2>
             </div>
 
-            <div class="lg:col-span-2 space-y-12">
-                <section>
-                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-blue-500 mb-6">Work Experience</h2>
-                    <div class="glass p-8 rounded-3xl relative overflow-hidden group">
-                        <div class="flex justify-between items-start mb-4">
+            <div class="resume-layout">
+                <div class="resume-sidebar">
+                    <section>
+                        <h3>Education</h3>
+                        <div class="stack">
+                            <article>
+                                <h4>Carnegie Mellon University</h4>
+                                <p>B.S. in Computer Science</p>
+                                <p>Expected May 2029</p>
+                                <p>GPA: 4.0 | Fall 2025 Dean's List</p>
+                            </article>
+                            <article>
+                                <h4>Shanghai Star River Bilingual</h4>
+                                <p>High School Diploma | GPA 4.7</p>
+                                <p>AP Computer Science A, top global scorer group</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Skills</h3>
+                        <div class="skill-cloud">
+                            <span>C / C++</span>
+                            <span>Python</span>
+                            <span>Java</span>
+                            <span>LaTeX</span>
+                            <span>Computer Vision</span>
+                            <span>Embedded Systems</span>
+                            <span>RISC-V</span>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Awards</h3>
+                        <div class="stack compact">
+                            <article>
+                                <h4>USACO Platinum Division</h4>
+                                <p>Top-tier competitive programming.</p>
+                            </article>
+                            <article>
+                                <h4>S.-T. Yau Science Award</h4>
+                                <p>Excellent Award, top 1% globally.</p>
+                            </article>
+                            <article>
+                                <h4>National Talents Plan</h4>
+                                <p>Top 2 in Computer Science.</p>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="resume-main">
+                    <section class="feature-panel">
+                        <div class="panel-header">
                             <div>
-                                <h3 class="font-bold text-xl group-hover:text-blue-400 transition">UltraRISC Technology</h3>
-                                <p class="text-slate-400">Summer Internship [cite: 31, 32]</p>
+                                <p class="eyebrow">Work Experience</p>
+                                <h3>UltraRISC Technology</h3>
+                                <p>Summer Internship</p>
                             </div>
-                            <span class="text-xs font-mono text-slate-500">July 2024 — Aug 2024 [cite: 33]</span>
+                            <span>Jul 2024 - Aug 2024</span>
                         </div>
-                        <ul class="text-sm text-slate-400 space-y-2 list-disc list-inside">
-                            <li>Optimized and deployed LLMs on RISC-V architecture via llama.cpp cross-compilation[cite: 34].</li>
-                            <li>Benchmarked inference performance and managed memory for resource-limited systems[cite: 35].</li>
+                        <ul>
+                            <li>Optimized and deployed LLMs on RISC-V architecture through llama.cpp cross-compilation.</li>
+                            <li>Benchmarked inference performance and managed memory for resource-limited systems.</li>
                         </ul>
-                    </div>
-                </section>
+                    </section>
 
-                <section>
-                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-violet-500 mb-6">Research Projects</h2>
-                    <div class="space-y-6">
-                        <div class="glass p-8 rounded-3xl">
-                            <h3 class="font-bold text-xl">Autonomous Swimmer-following Vehicle</h3>
-                            <p class="text-sm text-violet-400 mb-4">Fudan University | Advisor: Prof. Tun Lu [cite: 18, 19]</p>
-                            <p class="text-sm text-slate-400 mb-4">Developed AI-assisted vehicles for swimmer detection. Implemented vanishing point-based optimization to improve long-range NMS accuracy[cite: 21, 22].</p>
-                            <span class="text-xs px-3 py-1 bg-violet-500/20 text-violet-300 rounded-lg">ISEF Chinese National Team [cite: 23]</span>
+                    <section class="feature-panel">
+                        <p class="eyebrow">Research Projects</p>
+                        <div class="project-list">
+                            <article>
+                                <h3>Autonomous Swimmer-following Vehicle</h3>
+                                <p>Fudan University | Advisor: Prof. Tun Lu</p>
+                                <p>Developed AI-assisted vehicles for swimmer detection and implemented vanishing point-based optimization to improve long-range NMS accuracy.</p>
+                                <span>ISEF Chinese National Team</span>
+                            </article>
+                            <article>
+                                <h3>Live Chat Emotionizer</h3>
+                                <p>Individual Research</p>
+                                <p>A real-time chatbot framework using OpenCV, FER, MTCNN, and Ollama to add emotional context awareness to messaging.</p>
+                            </article>
                         </div>
-
-                        <div class="glass p-8 rounded-3xl">
-                            <h3 class="font-bold text-xl">Live Chat Emotionizer</h3>
-                            <p class="text-sm text-slate-400 mb-4">Individual Research [cite: 25, 26]</p>
-                            <p class="text-sm text-slate-400">A real-time chatbot framework utilizing OpenCV, FER, MTCNN, and Ollama to add emotional context awareness to messaging[cite: 28, 29].</p>
-                        </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <section id="blog" class="section-block">
+            <div class="section-heading">
+                <p class="eyebrow">Blog</p>
+                <h2>Notes and project writeups</h2>
+            </div>
+            <div id="blog-container" class="blog-grid" aria-live="polite"></div>
+        </section>
     </main>
 
-    <main id="blog-page" class="pt-32 pb-20 px-6 max-w-4xl mx-auto hidden-section">
-        <header class="mb-16">
-            <h2 class="text-4xl font-bold mb-4">Technical <span class="text-violet-500">Blog</span></h2>
-            <p class="text-slate-400">Thoughts on Computer Vision, RISC-V, and Robotics.</p>
-        </header>
-        <div id="blog-container" class="space-y-12">
-            </div>
-    </main>
-
-    <footer class="py-12 text-center text-slate-600 text-xs border-t border-white/5">
-        &copy; 2026 Hongyi Qi • Carnegie Mellon University [cite: 5]
+    <footer>
+        <span>Hongyi Qi</span>
+        <a href="mailto:eqi@andrew.cmu.edu">eqi@andrew.cmu.edu</a>
+        <span>Pittsburgh, PA</span>
     </footer>
 
     <script src="posts.js"></script>
