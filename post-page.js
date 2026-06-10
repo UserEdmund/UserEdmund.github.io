@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
         root.innerHTML = `
             <a class="back-link" href="../index.html#blog">Back to blog</a>
             <article class="post-article">
-                <p class="eyebrow">Missing post</p>
+                <p class="eyebrow">Missing Post</p>
                 <h1>Post not found</h1>
-                <p class="lede">This article does not exist yet.</p>
+                <p class="lede">I don't recall that I've ever wrote this...</p>
             </article>
         `;
         return;
