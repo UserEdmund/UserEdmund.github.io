@@ -6,6 +6,15 @@
     <title>Hongyi Qi | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+            "GaussianSplats3D": "https://unpkg.com/@mkkellogg/gaussian-splats-3d@0.4.0/build/gaussian-splats-3d.module.js"
+        }
+    }
+    </script>
 </head>
 <body>
     <nav class="site-nav">
@@ -25,26 +34,15 @@
                 <p class="eyebrow">Computer Science @ Carnegie Mellon</p>
                 <h1>Hongyi Qi</h1>
                 <p class="lede">I work with Computer Vision and Computer Graphics</p>
+                <p class="hero-location">B.S. in Computer Science, CMU · Pittsburgh &amp; Shanghai</p>
                 <div class="hero-actions">
                     <a class="button-primary" href="#resume">View resume</a>
                     <a class="button-secondary" href="#blog">Read notes</a>
                 </div>
             </div>
-            <aside class="field-card" aria-label="Profile snapshot">
-                <div class="field-grid">
-                    <span>vision</span>
-                    <span>systems</span>
-                    <span>robotics</span>
-                    <span>algorithms</span>
-                </div>
-                <div class="signal-lines" aria-hidden="true">
-                    <i></i><i></i><i></i><i></i><i></i>
-                </div>
-                <div>
-                    <p class="field-label">Currently</p>
-                    <p class="field-text">B.S. in Computer Science, CMU. Based between Pittsburgh and Shanghai.</p>
-                </div>
-            </aside>
+            <div id="splat-viewer" class="splat-viewer" aria-label="Interactive 3D Gaussian Splatting reconstruction">
+                <span class="splat-hint">Drag to orbit · Scroll to zoom</span>
+            </div>
         </section>
 
         <section id="resume" class="section-block">
@@ -161,5 +159,32 @@
 
     <script src="posts.js"></script>
     <script src="script.js"></script>
+    <script type="module">
+        import * as GaussianSplats3D from 'GaussianSplats3D';
+
+        const viewerContainer = document.getElementById('splat-viewer');
+        if (!viewerContainer) throw new Error('Viewer container not found');
+
+        const viewer = new GaussianSplats3D.Viewer({
+            rootElement: viewerContainer,
+            cameraUp: [0, -1, -0.6],
+            initialCameraPosition: [-1.5, 0.5, 1.5],
+            initialCameraLookAt: [0, 0, 0],
+            selfDrivenMode: true,
+            sharedMemoryForWorkers: false,
+            gpuAcceleratedSort: true,
+            sceneRevealMode: GaussianSplats3D.SceneRevealMode.Instant,
+            useBuiltInControls: true,
+        });
+
+        viewer.addSplatScene('models_3D/gaussians_0-0-0.ply', {
+            splatAlphaRemovalThreshold: 5,
+            progressiveLoad: true,
+            showLoadingUI: false,
+        }).then(() => {
+            viewer.start();
+            viewerContainer.classList.add('loaded');
+        });
+    </script>
 </body>
 </html>
