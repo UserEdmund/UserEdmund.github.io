@@ -17,5 +17,17 @@ It is more a work of increasing recall in this specific circumstance. We don't w
 ### Future work
 I would say the use of monocular depth graph prediction method would be better to deal with this situation. With depth prediction plus object detection, it would be more precise than just using vanishing-point based depth estimation.
         `
+    },
+    {
+        id: "thoughts-on-3dgs",
+        title: "Thoughts on 3D Gaussian Splatting",
+        date: "June 12, 2026",
+        isoDate: "2026-06-12",
+        tags: ["CG", "3DGS", "Research"],
+        url: "blog/thoughts-on-3dgs.html",
+        excerpt: "my own insights on 3dgs when doing related reseaches",
+        content: `
+        Still Working...
+        `
     }
 ];
