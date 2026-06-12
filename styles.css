@@ -80,8 +80,8 @@ a {
 
 .hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
-    gap: 56px;
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 1fr);
+    gap: 48px;
     align-items: center;
     min-height: calc(100vh - 92px);
     padding: 56px 0 72px;
@@ -156,8 +156,9 @@ h1 {
 .splat-viewer {
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1;
-    min-height: 340px;
+    aspect-ratio: 3 / 4;
+    min-height: 420px;
+    max-height: 600px;
     border: 1px solid var(--line);
     background: var(--paper);
     box-shadow: 0 24px 60px rgba(23, 33, 29, 0.08);
