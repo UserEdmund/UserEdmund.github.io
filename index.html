@@ -168,7 +168,7 @@
         const viewer = new GaussianSplats3D.Viewer({
             rootElement: viewerContainer,
             cameraUp: [0, -1, -0.6],
-            initialCameraPosition: [-1.5, 0.5, 1.5],
+            initialCameraPosition: [-10, 4, 10],
             initialCameraLookAt: [0, 0, 0],
             selfDrivenMode: true,
             sharedMemoryForWorkers: false,
@@ -177,7 +177,7 @@
             useBuiltInControls: true,
         });
 
-        viewer.addSplatScene('models_3D/gaussians_0-0-0.ply', {
+        viewer.addSplatScene('models_3D/gaussians.spz', {
             splatAlphaRemovalThreshold: 5,
             progressiveLoad: true,
             showLoadingUI: false,
