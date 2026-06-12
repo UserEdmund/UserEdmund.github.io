@@ -9,9 +9,9 @@
     <script type="importmap">
     {
         "imports": {
-            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
-            "GaussianSplats3D": "https://unpkg.com/@mkkellogg/gaussian-splats-3d@0.4.0/build/gaussian-splats-3d.module.js"
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+            "GaussianSplats3D": "https://cdn.jsdelivr.net/npm/@mkkellogg/gaussian-splats-3d@0.4.0/build/gaussian-splats-3d.module.js"
         }
     }
     </script>
@@ -162,29 +162,42 @@
     <script type="module">
         import * as GaussianSplats3D from 'GaussianSplats3D';
 
-        const viewerContainer = document.getElementById('splat-viewer');
-        if (!viewerContainer) throw new Error('Viewer container not found');
+        async function initViewer() {
+            const viewerContainer = document.getElementById('splat-viewer');
+            if (!viewerContainer) return;
 
-        const viewer = new GaussianSplats3D.Viewer({
-            rootElement: viewerContainer,
-            cameraUp: [0, -1, -0.6],
-            initialCameraPosition: [-10, 4, 10],
-            initialCameraLookAt: [0, 0, 0],
-            selfDrivenMode: true,
-            sharedMemoryForWorkers: false,
-            gpuAcceleratedSort: true,
-            sceneRevealMode: GaussianSplats3D.SceneRevealMode.Instant,
-            useBuiltInControls: true,
-        });
+            const viewer = new GaussianSplats3D.Viewer({
+                rootElement: viewerContainer,
+                cameraUp: [0, -1, -0.6],
+                initialCameraPosition: [-10, 4, 10],
+                initialCameraLookAt: [0, 0, 0],
+                selfDrivenMode: true,
+                sharedMemoryForWorkers: false,
+                gpuAcceleratedSort: true,
+                sceneRevealMode: GaussianSplats3D.SceneRevealMode.Instant,
+                useBuiltInControls: true,
+            });
 
-        viewer.addSplatScene('models_3D/gaussians.spz', {
-            splatAlphaRemovalThreshold: 5,
-            progressiveLoad: true,
-            showLoadingUI: false,
-        }).then(() => {
-            viewer.start();
-            viewerContainer.classList.add('loaded');
-        });
+            try {
+                await viewer.addSplatScene('models_3D/gaussians_0-0-0.ply', {
+                    splatAlphaRemovalThreshold: 5,
+                    progressiveLoad: false,
+                    showLoadingUI: false,
+                });
+                viewer.start();
+                viewerContainer.classList.add('loaded');
+            } catch (e) {
+                viewerContainer.classList.add('loaded');
+                viewerContainer.innerHTML +=
+                    `<span style="position:absolute;bottom:10px;left:10px;color:#b04a35;font-size:0.78rem;z-index:2;">Failed to load 3D model</span>`;
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initViewer);
+        } else {
+            initViewer();
+        }
     </script>
 </body>
 </html>
