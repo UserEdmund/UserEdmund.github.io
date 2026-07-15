@@ -52,5 +52,20 @@ I would say the use of monocular depth graph prediction method would be better t
 
         And about how to prompt them, I usually make AI first explain the code to me and the overall logic and pipeline of the code, then ask it to write the code. I figure that this will make the code AI wrote better, and also help me to understand the things AI is doing. 
         `
+    },
+    {
+        id: "ai-distillation-learning-method-for-desperate-students",
+        title: "AI Distillation Learning Method for Desperate Students",
+        date: "July 15, 2026",
+        isoDate: "2026-07-15",
+        tags: ["AI", "ML", "Finals", "Education"],
+        url: "blog/ai-distillation-learning-method-for-desperate-students.html",
+        excerpt: "Don't know how to study effectively for finals? Try distilling knowledge from AI to yourself!",
+        content: `
+        ### Introduction
+        This is a method I found out during my studying of final in my bachelor years at CMU. When I saw the distillation method for AI models, I thought: "Hey, why not distill knowledge from AI to humans?"
+        Traditional learning methods have numerous drawbacks. Textbook based learning is slow and inefficient, usually takes the learning days to converge. 
+        And here it is, my magnificent distillation learning method for desperate students, and compared to other learning methods which involves working with AI, my experiment on myself shows that it roughly keeps my scores the same, but saves me ~2hr per subject.
+        `
     }
 ];
