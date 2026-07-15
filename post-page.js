@@ -20,6 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     document.title = `${post.title} | Hongyi Qi`;
+
+    let contentHtml;
+    try {
+        contentHtml = marked.parse(post.content.trim());
+    } catch (e) {
+        console.warn("Marked not available, falling back to plain text");
+        contentHtml = `<pre style="white-space:pre-wrap;font-family:inherit">${post.content.trim()}</pre>`;
+    }
+
     root.innerHTML = `
         <a class="back-link" href="../index.html#blog">Back to blog</a>
         <article class="post-article">
@@ -30,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <h1>${post.title}</h1>
             <p class="lede">${post.excerpt}</p>
             <div class="post-content">
-                ${marked.parse(post.content)}
+                ${contentHtml}
             </div>
         </article>
     `;
