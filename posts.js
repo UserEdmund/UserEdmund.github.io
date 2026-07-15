@@ -27,7 +27,7 @@ I would say the use of monocular depth graph prediction method would be better t
         url: "blog/thoughts-on-3dgs.html",
         excerpt: "my own insights on 3dgs when doing related reseaches",
         content: `
-        ### Still Working...
+### Still Working...
         `
     },
     {
@@ -39,18 +39,18 @@ I would say the use of monocular depth graph prediction method would be better t
         url: "blog/thoughts-on-vibe-coding.html",
         excerpt: "my own insights on vibe coding and the use of AI and how AI is changing the industry",
         content: `
-        This blog post is a mixture of random thoughts and useful(or maybe not) experiences that I have from using tons of AI coding tools.
-        Actually, I was writing this while my AI coding assistant was helping me out with my projects. I guess that was something new only with AI coding agents. In the past I would have to write code with full attention, debugging and testing stuff.
-        Now I can write my blogs while my AI is working, haha!
-        Despite the convenience vibe coding brings, I still think that it is important to know what you are doing. If this is a little vague, then I would say you should at least know 70% of the code base that you are working on.
-        For my own experience, AI coding agents are good at helping you run experiments, build environments, and even write some blocks of code. But when it comes to giving them a big project to work on, they tend to fail immediately. My personal preference when it comes to working with AI is that I would write the skeleton of the code, eg the functions, classes, high-level ideas of what this block of code should do, fancy data stuctures,
-        and then let AI fill in the details. This way, not only I know how my code works in the big picture, the accuracy of the coding agents also increases by alot.
+This blog post is a mixture of random thoughts and useful(or maybe not) experiences that I have from using tons of AI coding tools.
+Actually, I was writing this while my AI coding assistant was helping me out with my projects. I guess that was something new only with AI coding agents. In the past I would have to write code with full attention, debugging and testing stuff.
+Now I can write my blogs while my AI is working, haha!
+Despite the convenience vibe coding brings, I still think that it is important to know what you are doing. If this is a little vague, then I would say you should at least know 70% of the code base that you are working on.
+For my own experience, AI coding agents are good at helping you run experiments, build environments, and even write some blocks of code. But when it comes to giving them a big project to work on, they tend to fail immediately. My personal preference when it comes to working with AI is that I would write the skeleton of the code, eg the functions, classes, high-level ideas of what this block of code should do, fancy data stuctures,
+and then let AI fill in the details. This way, not only I know how my code works in the big picture, the accuracy of the coding agents also increases by alot.
 
-        Yeah, and this leads to my next thought on the impact of AI coding agents on the industry. I think that despite AI coding agents lowered the barrier to enter the coding world, real industrial-level code still need to be supervised by humans with real understanding of their fields. Code solely written by AI is no more than gambling. 
-        I am not against the AI coding agents, and do not think that they will eventually replace human coders. In fact, I am very optimistic about the future of AI coding agents, and think that someday they will be able to acheive more and more complex tasks with greater accuracy and efficiency. 
-        It is just that we need to be careful about using them. 
+Yeah, and this leads to my next thought on the impact of AI coding agents on the industry. I think that despite AI coding agents lowered the barrier to enter the coding world, real industrial-level code still need to be supervised by humans with real understanding of their fields. Code solely written by AI is no more than gambling. 
+I am not against the AI coding agents, and do not think that they will eventually replace human coders. In fact, I am very optimistic about the future of AI coding agents, and think that someday they will be able to acheive more and more complex tasks with greater accuracy and efficiency. 
+It is just that we need to be careful about using them. 
 
-        And about how to prompt them, I usually make AI first explain the code to me and the overall logic and pipeline of the code, then ask it to write the code. I figure that this will make the code AI wrote better, and also help me to understand the things AI is doing. 
+And about how to prompt them, I usually make AI first explain the code to me and the overall logic and pipeline of the code, then ask it to write the code. I figure that this will make the code AI wrote better, and also help me to understand the things AI is doing. 
         `
     },
     {
@@ -62,10 +62,10 @@ I would say the use of monocular depth graph prediction method would be better t
         url: "blog/ai-distillation-learning-method-for-desperate-students.html",
         excerpt: "Don't know how to study effectively for finals? Try distilling knowledge from AI to yourself!",
         content: `
-        ### Introduction
-        This is a method I found out during my studying of final in my bachelor years at CMU. When I saw the distillation method for AI models, I thought: "Hey, why not distill knowledge from AI to humans?"
-        Traditional learning methods have numerous drawbacks. Textbook based learning is slow and inefficient, usually takes the learning days to converge. 
-        And here it is, my magnificent distillation learning method for desperate students, and compared to other learning methods which involves working with AI, my experiment on myself shows that it roughly keeps my scores the same, but saves me ~2hr per subject.
+### Introduction
+This is a method I found out during my studying of final in my bachelor years at CMU. When I saw the distillation method for AI models, I thought: "Hey, why not distill knowledge from AI to humans?"
+Traditional learning methods have numerous drawbacks. Textbook based learning is slow and inefficient, usually takes the learning days to converge. 
+And here it is, my magnificent distillation learning method for desperate students, and compared to other learning methods which involves working with AI, my experiment on myself shows that it roughly keeps my scores the same, but saves me ~2hr per subject.
         `
     }
 ];
