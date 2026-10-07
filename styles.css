@@ -130,8 +130,8 @@ h1 {
 
 .profile-photo {
     flex: 0 0 auto;
-    width: 76px;
-    height: 76px;
+    width: 96px;
+    height: 96px;
     aspect-ratio: 1;
     border: 2px solid var(--ink);
     object-fit: cover;
