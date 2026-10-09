@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hongyi Qi | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20261007-profile-large">
+    <link rel="stylesheet" href="styles.css?v=20261008-photo-hero">
     <script type="importmap">
     {
         "imports": {
@@ -31,26 +31,32 @@
     <main id="home" class="page-shell">
         <section class="hero-grid">
             <div class="hero-copy">
-                <div class="hero-identity">
-                    <img
-                        class="profile-photo"
-                        src="figures/profile_pic_web.jpg"
-                        alt="Hongyi Qi standing in a lavender field"
-                        width="136"
-                        height="136"
-                        fetchpriority="high"
-                    >
-                    <div>
-                        <p class="eyebrow">Computer Science @ Carnegie Mellon</p>
-                        <h1>Hongyi Qi</h1>
-                    </div>
-                </div>
+                <p class="eyebrow">Computer Science @ Carnegie Mellon</p>
+                <h1>Hongyi Qi</h1>
                 <p class="lede">I work with Computer Vision and Computer Graphics</p>
                 <p class="hero-location">B.S. in Computer Science, CMU · Pittsburgh &amp; Shanghai</p>
                 <div class="hero-actions">
                     <a class="button-primary" href="#resume">View resume</a>
                     <a class="button-secondary" href="#blog">Read notes</a>
                 </div>
+            </div>
+            <div class="profile-portrait">
+                <img
+                    src="figures/profile_pic_large.jpg"
+                    alt="Hongyi Qi standing in a lavender field"
+                    width="1400"
+                    height="1049"
+                    fetchpriority="high"
+                    decoding="async"
+                >
+            </div>
+        </section>
+
+        <section class="splat-feature section-block">
+            <div class="splat-copy">
+                <p class="eyebrow">Current Experiment</p>
+                <h2>Reconstructing the physical world</h2>
+                <p>An interactive scene rendered with 3D Gaussian Splatting.</p>
             </div>
             <div id="splat-viewer" class="splat-viewer" aria-label="Interactive 3D Gaussian Splatting reconstruction">
                 <span class="splat-hint">Drag to orbit · Scroll to zoom</span>
