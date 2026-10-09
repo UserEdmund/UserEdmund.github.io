@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hongyi Qi | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20261008-photo-hero">
+    <link rel="stylesheet" href="styles.css?v=20261009-photo-and-3d">
     <script type="importmap">
     {
         "imports": {
@@ -40,26 +40,20 @@
                     <a class="button-secondary" href="#blog">Read notes</a>
                 </div>
             </div>
-            <div class="profile-portrait">
-                <img
-                    src="figures/profile_pic_large.jpg"
-                    alt="Hongyi Qi standing in a lavender field"
-                    width="1400"
-                    height="1049"
-                    fetchpriority="high"
-                    decoding="async"
-                >
-            </div>
-        </section>
-
-        <section class="splat-feature section-block">
-            <div class="splat-copy">
-                <p class="eyebrow">Current Experiment</p>
-                <h2>Reconstructing the physical world</h2>
-                <p>An interactive scene rendered with 3D Gaussian Splatting.</p>
-            </div>
-            <div id="splat-viewer" class="splat-viewer" aria-label="Interactive 3D Gaussian Splatting reconstruction">
-                <span class="splat-hint">Drag to orbit · Scroll to zoom</span>
+            <div class="hero-media">
+                <div class="profile-portrait">
+                    <img
+                        src="figures/profile_pic_large.jpg"
+                        alt="Hongyi Qi standing in a lavender field"
+                        width="1400"
+                        height="1049"
+                        fetchpriority="high"
+                        decoding="async"
+                    >
+                </div>
+                <div id="splat-viewer" class="splat-viewer" aria-label="Interactive 3D Gaussian Splatting reconstruction">
+                    <span class="splat-hint">Drag to orbit · Scroll to zoom</span>
+                </div>
             </div>
         </section>
 
